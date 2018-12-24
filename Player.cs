@@ -20,7 +20,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         //don't want to do movement inside of update, you want to do it inside of fixed update
-        movement = Input.acceleration.x * movementSpeed;
+        //for android -->> movement = Input.acceleration.x * movementSpeed;
+        movement = Input.GetAxis("Horizontal")* movementSpeed;
     }
 
         void FixedUpdate()
@@ -30,4 +31,5 @@ public class Player : MonoBehaviour
             rb.velocity = velocity;
         }
 	
+
 }
